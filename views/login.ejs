@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/head') %>
+    <h2>Login</h2>
+
+    <form action="/login" method="POST">
+        <label for="usuarionome"> Nome de Usuário :</label>
+        <input type="text" id="usuarionome" name="usuarionome" required>
+        
+        <label for="senha"> Senha :</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <button type="submit">Login</button>
+    <br>
+    <ul>
+        <%- include('partials/footer') %>
+    </ul>
+</body>
+</html>

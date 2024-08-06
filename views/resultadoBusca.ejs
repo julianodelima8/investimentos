@@ -1,0 +1,34 @@
+<%- include('partials/head') %>
+    <h2>Resultado da Busca</h2>
+    <% if(resposta.results) { %>
+
+        <div>
+            <h2><%= resposta.results.currencies.source %></h2>
+        </div>
+        <div class="moedas">
+            <p>Dólar: <%= resposta.results.currencies.USD.buy %> (compra), <%= resposta.results.currencies.USD.sell %> (venda)</p>
+            <p>Euro: <%= resposta.results.currencies.EUR.buy %> (compra), <%= resposta.results.currencies.EUR.sell %> (venda)</p>
+            <p>Bitcoin: <%= resposta.results.currencies.BTC.buy %> (compra), <%= resposta.results.currencies.BTC.sell %> (venda)</p>
+        </div>
+
+        <div>
+        <h2> taxas diarias </h2>
+        </div>
+
+        <div class="moedas">
+            <p>Data: <%= resposta.results.taxes[0].date %></p>
+            <p>CDI: <%= resposta.results.taxes[0].cdi %></p>
+            <p>Selic: <%= resposta.results.taxes[0].selic %></p>
+            <p>Fator Diário: <%= resposta.results.taxes[0].daily_factor %></p>
+            <p>Selic Diária: <%= resposta.results.taxes[0].selic_daily %></p>
+            <p>CDI Diário: <%= resposta.results.taxes[0].cdi_daily %></p>
+        </div>
+
+
+    <% } else { %>
+        <p>Nenhum resultado encontrado para a busca.</p>
+    <% } %>
+
+    <div class="button">
+      <a href="/salvar" class="salvar">Salvar no banco</a>
+    </div>
